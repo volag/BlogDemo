@@ -22,18 +22,18 @@ spring:
 ###############################################################################
 ## 项目参数，从maven中读取
 project:
-  name: spring-boot-seed
-  description: SpringBootSeed是一个SpringBoot的骨架项目，该项目集成SpringBoot2与众多常用框架，供学习使用
-  version: 0.2.1
-  groupId: com.dazzlzy
-  artifactId: spring-boot-seed
-  basedir: C:/Users/volga/Desktop/Blog
-  core-package: com.dazzlzy.common
-  service-package: com.dazzlzy.springbootseed
+  name: ${project.name}
+  description: ${project.description}
+  version: ${project.version}
+  groupId: ${project.groupId}
+  artifactId: ${project.artifactId}
+  basedir: ${project.basedir}
+  core-package: ${project.package.core}
+  service-package: ${project.package.service}
   author:
-    name: dazzlzy
-    url: 
-    email: dazzlzy@gmail.com
+    name: ${project.author.name}
+    url: ${project.author.url}
+    email: ${project.author.email}
 ###############################################################################
 ## mybatis
 mybatis:
