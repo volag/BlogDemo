@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-boot-seed
+Implementation-Version: 0.2.1
+Built-By: volga
+Implementation-Vendor-Id: com.dazzlzy
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_05
+Main-Class: ${start-class}
+
