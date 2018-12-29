@@ -3,10 +3,16 @@ package com.dazzlzy.springbootseed.controller;
 import com.dazzlzy.common.base.BaseResult;
 import com.dazzlzy.common.base.BaseResultGenerator;
 import com.dazzlzy.common.configuration.ProjectProperties;
+import com.dazzlzy.common.utils.SessionUtil;
+import com.dazzlzy.springbootseed.model.user.User;
+import com.dazzlzy.springbootseed.service.IShiroService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.models.auth.In;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +34,9 @@ public class TestController {
     private final ProjectProperties projectProperties;
 
     private final Environment environment;
+
+    @Autowired
+    IShiroService iShiroService;
 
     @Autowired
     public TestController(ProjectProperties projectProperties, Environment environment) {
@@ -98,6 +107,20 @@ public class TestController {
     @ApiOperation(value = "检查授权", notes = "检查授权，如果授权成功：返回success，否则跳转/login")
     @GetMapping(value = "checkAuthc")
     public BaseResult checkAuthc() {
+        return BaseResultGenerator.success();
+    }
+
+    /**
+     * 登录
+     *
+     * @return 检查登录
+     */
+    @ApiOperation(value = "检查登录", notes = "检查授权，如果授权成功：返回success，否则跳转/login")
+    @GetMapping(value = "login")
+    public BaseResult checkLogin(Integer userId,String userName,String password) {
+        log.info("userName:"+userName);
+        User user = iShiroService.login(userId.longValue(),userName,password);
+        log.info("userName:"+user.getUserName());
         return BaseResultGenerator.success();
     }
 

@@ -183,6 +183,13 @@
             <scope>test</scope>
         </dependency>
 
+
+        <!--thymeleaf  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
         <!--commons Jar-->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -257,6 +264,8 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger.version}</version>
         </dependency>
+
+
 
     </dependencies>
 
