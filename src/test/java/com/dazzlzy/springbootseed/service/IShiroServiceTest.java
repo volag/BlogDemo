@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 public class IShiroServiceTest extends SpringBootSeedApplicationTests {
 
     @Autowired
-    private IShiroService shiroService;
+    IShiroService shiroService;
 
     @Test
     public void login() {

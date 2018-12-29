@@ -6,6 +6,7 @@ import com.dazzlzy.springbootseed.model.user.Role;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * IRoleService的单元测试
@@ -17,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class IRoleServiceTest extends SpringBootSeedApplicationTests {
 
     @Autowired
-    private IRoleService roleService;
+    private IRoleService iRoleService;
 
     @Test
     public void addRole() {
@@ -26,6 +27,6 @@ public class IRoleServiceTest extends SpringBootSeedApplicationTests {
         role.setRoleCode("systemAdmin");
         role.setDescription("系统管理员，拥有系统超级管理权限");
         role.setStateCode(BooleanEnum.YES.getValue());
-        roleService.addRole(role);
+        iRoleService.addRole(role);
     }
 }

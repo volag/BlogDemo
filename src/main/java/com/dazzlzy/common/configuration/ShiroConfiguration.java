@@ -120,8 +120,9 @@ public class ShiroConfiguration {
          * ssl：  比如/admins/user/**=ssl没有参数，表示安全的url请求，协议为https
          * user： 比如/admins/user/**=user没有参数表示必须存在用户，当登入操作时不做检查
          */
-        filterChainDefinitionMap.put("/login.jsp", "anon");
-        filterChainDefinitionMap.put("/test/checkAuthc", "authc");
+        filterChainDefinitionMap.put("/login.html", "anon");
+        //filterChainDefinitionMap.put("/test/checkAuthc", "authc");
+        filterChainDefinitionMap.put("/test/checkAuthc", "anon");
         filterChainDefinitionMap.put("/test/**", "anon");
         // druid过滤
         filterChainDefinitionMap.put("/druid", "anon");
