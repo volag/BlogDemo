@@ -41,3 +41,13 @@ logging:
 swagger:
   enable: true
 ###############################################################################
+## thymeleaf配置
+thymeleaf:
+  cache: false
+ check-template: true
+ check-template-location: true
+ enabled: true
+ encoding: utf-8
+ mode: HTML5
+ prefix: classpath:/templates/
+ suffix: .html

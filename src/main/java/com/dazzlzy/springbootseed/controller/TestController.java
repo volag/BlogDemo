@@ -3,17 +3,15 @@ package com.dazzlzy.springbootseed.controller;
 import com.dazzlzy.common.base.BaseResult;
 import com.dazzlzy.common.base.BaseResultGenerator;
 import com.dazzlzy.common.configuration.ProjectProperties;
-import com.dazzlzy.common.utils.SessionUtil;
 import com.dazzlzy.springbootseed.model.user.User;
 import com.dazzlzy.springbootseed.service.IShiroService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.models.auth.In;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -27,7 +25,7 @@ import java.util.Arrays;
  */
 @Slf4j
 @Api(value = "/test", tags = "测试接口模块")
-@RestController
+@Controller
 @RequestMapping(value = "test")
 public class TestController {
 
